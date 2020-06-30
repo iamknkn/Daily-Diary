@@ -6,7 +6,7 @@ import database
 # noinspection PyShadowingNames
 if __name__ == '__main__':
     mainWindow = tkinter.Tk()
-    mainWindow.title("Encrypt")
+    mainWindow.title("Diary")
     mainWindow.geometry("400x200+400+200")
     mainWindow["background"] = "white"
     mainWindow["padx"] = 72
