@@ -18,15 +18,19 @@ def checkdb(nam=None, use=None, pas=None, action=None, err=None, window=None):
     """
     u = use.get()
     p = pas.get()
-    operations.create_dir('.', "cryptedfiles")
+    operations.create_dir(r'C:\Users\Public', 'Documents')
+    operations.create_dir(r'C:\Users\Public\Documents', "Diary")
+    operations.create_dir(r"C:\Users\Public\Documents\Diary", "user_data")
     try:
-        with shelve.open("cryptedfiles\\user_data") as users:
+        with shelve.open(r"C:\Users\Public\Documents\Diary\user_data\info") as users:
 
             def checkusers(ab, cd=None):
+                if len(users.keys()) == 0:
+                    return 0
                 for va in users.keys():
-                    if ab in users[va]["qw"] and cd is None:
+                    if ab == users[va]["qw"] and cd is None:
                         return 1
-                    elif ab in users[va]["qw"] and cd is not None:
+                    elif ab == users[va]["qw"] and cd is not None:
                         if users[va]["xae"] == cd:
                             return va
                         else:
@@ -46,7 +50,7 @@ def checkdb(nam=None, use=None, pas=None, action=None, err=None, window=None):
                         k += ord(j)
                     for j in u:
                         k += ord(j)
-                    y = os.path.join("cryptedfiles", na + str(k)[:3])
+                    y = os.path.join(r"C:\Users\Public\Documents\Diary", na + str(k)[:3])
                     action_window.enterwindow(window, y, u, p, na)
                 else:
                     raise FileNotFoundError
@@ -72,7 +76,7 @@ def checkdb(nam=None, use=None, pas=None, action=None, err=None, window=None):
                         k += ord(i)
                     for j in u:
                         k += ord(j)
-                    y = os.path.join("cryptedfiles", name + str(k)[:3])
+                    y = os.path.join(r"C:\Users\Public\Documents\Diary", name + str(k)[:3])
                     action_window.enterwindow(window, y, u, p, name)
     except FileNotFoundError:
         err.set("Invalid Username/Password\n")
