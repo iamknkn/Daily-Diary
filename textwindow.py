@@ -54,7 +54,7 @@ def new_window(window, path, dat, folder, use, pas, mode=None):
 
     window.destroy()                    # destroying previous window
     final = tkinter.Tk()                # creating a new window
-    final.title("Encrypt")
+    final.title("Diary")
     final["bg"] = "white"
     final.geometry("600x600")
     final.minsize(600, 600)
@@ -99,4 +99,4 @@ def new_window(window, path, dat, folder, use, pas, mode=None):
             info = crypto.altertext(j, use, pas, "decrypt")
             text.insert(tkinter.END, info)
             if len(j) == 0:
-                text.insert(tkinter.END, "NO content Found")
+                text.insert(tkinter.END, "No content Found")
