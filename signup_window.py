@@ -11,7 +11,7 @@ def signup(window):
     """
     window.destroy()
     signupwindow = tkinter.Tk()
-    signupwindow.title("Encrypt_SignUp")
+    signupwindow.title("Diary")
     signupwindow.geometry("400x200+400+200")
     signupwindow["background"] = "white"
     signupwindow.update()
