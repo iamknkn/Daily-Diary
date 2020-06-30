@@ -69,7 +69,7 @@ def enterwindow(window, y, u, p, name):
 
     window.destroy()
     readwrite = tkinter.Tk()
-    readwrite.title("Encrypt")
+    readwrite.title("Diary")
     readwrite.geometry("400x250+400+200")
     readwrite["background"] = "white"
     readwrite.maxsize(400, 250)
